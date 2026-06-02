@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padmajyothish K | ECE Portfolio</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Gemini-Inspired Glowing RGB Animated Background */
+        body {
+            background: linear-gradient(125deg, #090d16, #0e1726, #050b14);
+            color: #f1f5f9;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated Ambient Glowing Orbs */
+        body::before, body::after {
+            content: '';
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(140px);
+            opacity: 0.45;
+            animation: geminiGlow 18s infinite alternate ease-in-out;
+        }
+
+        body::before {
+            background: radial-gradient(circle, #3b82f6 0%, #6366f1 50%, transparent 100%);
+            top: -10%;
+            left: -10%;
+        }
+
+        body::after {
+            background: radial-gradient(circle, #9333ea 0%, #06b6d4 60%, transparent 100%);
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -9s;
+        }
+
+        @keyframes geminiGlow {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(80px, 50px) scale(1.1) rotate(180deg); }
+            100% { transform: translate(-40px, 90px) scale(0.9) rotate(360deg); }
+        }
+
+        /* Navigation with modern blur effect */
+        header {
+            background-color: rgba(9, 13, 22, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #38bdf8, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+            padding: 0 20px;
+        }
+
+        #hero h1 {
+            font-size: 56px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            background: linear-gradient(to right, #ffffff, #93c5fd, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #hero p {
+            font-size: 22px;
+            margin-bottom: 35px;
+            color: #38bdf8;
+            font-weight: 500;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb, #9333ea);
+            color: white;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(147, 51, 234, 0.4);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.6);
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+        }
+
+        /* Sections General */
+        section {
+            padding: 120px 20px 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(to right, #38bdf8, #a855f7);
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 18px;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        .skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skills-category {
+            margin-bottom: 25px;
+        }
+
+        .skills-category h3 {
+            font-size: 18px;
+            color: #a855f7;
+            margin-bottom: 12px;
+        }
+
+        .skills {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .skill-tag {
+            background-color: rgba(255, 255, 255, 0.04);
+            color: #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background-color: rgba(56, 189, 248, 0.15);
+            border-color: #38bdf8;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Projects Section (Glassmorphism Cards) */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(168, 85, 247, 0.4);
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 12px 30px rgba(147, 51, 234, 0.15), 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 210px;
+            background-color: #1e293b;
+            object-fit: cover;
+            filter: grayscale(20%) brightness(90%);
+            transition: filter 0.3s;
+        }
+
+        .project-card:hover .project-img {
+            filter: grayscale(0%) brightness(100%);
+        }
+
+        .project-info {
+            padding: 25px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-size: 20px;
+        }
+
+        .project-info p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-tags span {
+            font-size: 12px;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Contact Section */
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.03);
+            color: white;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+
+        #contact input:focus, #contact textarea:focus {
+            outline: none;
+            border-color: #38bdf8;
+            background-color: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+        }
+
+        #contact textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        #contact button {
+            background: linear-gradient(135deg, #0284c7, #7c3aed);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+
+        #contact button:hover {
+            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(5, 9, 17, 0.8);
+            color: #64748b;
+            text-align: center;
+            padding: 30px;
+            margin-top: 80px;
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            #hero h1 {
+                font-size: 40px;
+            }
+            #hero p {
+                font-size: 18px;
+            }
+            body::before, body::after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Padmajyothish K</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About & Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Padmajyothish K</h1>
+        <p>Electronics & Communication Engineering Student</p>
+        <a href="#projects" class="btn">Explore My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am an Electronics and Communication Engineering undergraduate passionate about hardware-software integration. 
+            My interests span embedded systems, Internet of Things (IoT), circuit design, and signal processing. I enjoy building micro-controller based setups and writing efficient firmware to bring hardware ideas to life.
+        </p>
+
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Hardware & Tools</h3>
+                <div class="skills">
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">Raspberry Pi</span>
+                    <span class="skill-tag">MATLAB</span>
+                    <span class="skill-tag">Proteus / Multisim</span>
+                    <span class="skill-tag">Verilog / VHDL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Programming & Software</h3>
+                <div class="skills">
+                    <span class="skill-tag">Embedded C / C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML5 / CSS3</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Academic & Personal Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=500" alt="IoT Project" class="project-img">
+                <div class="project-info">
+                    <h3>Smart IoT Weather Monitor</h3>
+                    <p>Designed an environment monitoring node using ESP32 that logs temperature, humidity, and atmospheric pressure data seamlessly to a cloud dashboard.</p>
+                    <div class="project-tags">
+                        <span>ESP32</span>
+                        <span>IoT</span>
+                        <span>Sensors</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=500" alt="MATLAB Project" class="project-img">
+                <div class="project-info">
+                    <h3>Signal Filter Design</h3>
+                    <p>Implemented digital Low-Pass and High-Pass FIR filters in MATLAB to isolate noise from audio sample waveforms.</p>
+                    <div class="project-tags">
+                        <span>MATLAB</span>
+                        <span>DSP</span>
+                        <span>Simulation</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?w=500" alt="Embedded Project" class="project-img">
+                <div class="project-info">
+                    <h3>Line Follower Robot</h3>
+                    <p>Built an autonomous robot using ATmega328P utilizing an array of IR sensors with a PID tuning algorithm for smooth navigation.</p>
+                    <div class="project-tags">
+                        <span>Embedded C</span>
+                        <span>Robotics</span>
+                        <span>Hardware</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Feel free to reach out for collaborations or project discussions..." required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Padmajyothish K. Built with HTML & CSS.</p>
+    </footer>
+
+</body>
+</html>
